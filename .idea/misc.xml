@@ -3,7 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Johannes/Desktop/koulujuttuja/Mobiilikehitysprojekti-R15/PillDozer/PillDozer/app/src/main/res/layout/activity_feed_back.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/Johannes/Desktop/koulujuttuja/Mobiilikehitysprojekti-R15/PillDozer/PillDozer/app/src/main/res/layout/activity_history.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/Johannes/Desktop/koulujuttuja/Mobiilikehitysprojekti-R15/PillDozer/PillDozer/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Johannes/Desktop/koulujuttuja/Mobiilikehitysprojekti-R15/PillDozer/PillDozer/app/src/main/res/layout/activity_settings.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Johannes/Desktop/koulujuttuja/Mobiilikehitysprojekti-R15/PillDozer/PillDozer/app/src/main/res/menu/mainmenu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Johannes/Desktop/koulujuttuja/Mobiilikehitysprojekti-R15/PillDozer/PillDozer/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.14635416666666667" />
       </map>
     </option>
   </component>
