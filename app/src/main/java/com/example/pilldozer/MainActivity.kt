@@ -10,12 +10,21 @@ import com.example.pilldozer.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+    var loginCheck = false
+
     lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        if (loginCheck == false) {
+            setContentView(binding.root)
+            startLogin()
+        }
+        else {
+            setContentView(binding.root)
+        }
+
 
     }
 
@@ -69,5 +78,11 @@ class MainActivity : AppCompatActivity() {
     private fun startFeedback() {
         val intent = Intent(this, FeedBackScreen::class.java)
         startActivity(intent)
+    }
+
+    fun startLogin() {
+        val intent = Intent(this, LoginScreen::class.java)
+        startActivity(intent)
+
     }
 }
