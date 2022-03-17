@@ -3,14 +3,18 @@ package com.example.pilldozer
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import com.example.pilldozer.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
     var loginCheck = false
+
 
     lateinit var binding: ActivityMainBinding
 
@@ -23,6 +27,23 @@ class MainActivity : AppCompatActivity() {
         }
         else {
             setContentView(binding.root)
+        }
+
+        val timeTextView: TextView = findViewById(R.id.countTime)
+
+        val startCountButton: Button = findViewById(R.id.BuStartCount)
+        startCountButton.setOnClickListener {
+            object : CountDownTimer(30000, 1000) {
+
+                override fun onTick(millisUntilFinished: Long) {
+                    timeTextView.setText("seconds remaining: " + millisUntilFinished / 1000)
+                }
+
+                override fun onFinish() {
+                    timeTextView.setText("ota lääkkeet!")
+                }
+            }.start()
+
         }
 
 
@@ -86,3 +107,16 @@ class MainActivity : AppCompatActivity() {
 
     }
 }
+
+/*
+object : CountDownTimer(30000, 1000) {
+
+      override fun onTick(millisUntilFinished: Long) {
+          mTextField.setText("seconds remaining: " + millisUntilFinished / 1000)
+      }
+
+      override fun onFinish() {
+          mTextField.setText("done!")
+      }
+  }.start()
+ */
