@@ -13,7 +13,14 @@ import com.example.pilldozer.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    var loginCheck = false
+
+
+    companion object {
+        var loginId: Int? = 0 // Käyttäjän id
+
+        var loginCheck: Boolean? = false
+    }
+
 
 
     lateinit var binding: ActivityMainBinding
@@ -21,6 +28,14 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
+
+        if (loginId == 0) { //jos käyttäjällä ei ole id:tä login ruutu käynnistyy
+            loginCheck = false
+        }
+        else {
+            loginCheck = true
+        }
+
         if (loginCheck == false) {
             setContentView(binding.root)
             startLogin()
@@ -43,6 +58,7 @@ class MainActivity : AppCompatActivity() {
                     timeTextView.setText("ota lääkkeet!")
                 }
             }.start()
+
 
         }
 
