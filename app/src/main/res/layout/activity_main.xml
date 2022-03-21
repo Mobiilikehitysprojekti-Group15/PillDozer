@@ -50,4 +50,14 @@
         app:layout_constraintStart_toStartOf="@+id/countTime"
         app:layout_constraintTop_toBottomOf="@+id/countTime" />
 
+    <Button
+        android:id="@+id/buMedicine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="20dp"
+        android:text="Lääkkeet"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

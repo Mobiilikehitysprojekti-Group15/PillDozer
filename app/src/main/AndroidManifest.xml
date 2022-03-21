@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PillDozer">
         <activity
+            android:name=".AlertScreen"
+            android:exported="false" />
+        <activity
+            android:name=".MedicineScreen"
+            android:exported="false" />
+        <activity
             android:name=".LoginScreen"
             android:exported="false" />
         <activity

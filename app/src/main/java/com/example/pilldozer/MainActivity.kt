@@ -59,7 +59,11 @@ class MainActivity : AppCompatActivity() {
                 }
             }.start()
 
+        }
 
+        val medicineListButton: Button = findViewById(R.id.buMedicine)
+        medicineListButton.setOnClickListener {
+            startMedicine()
         }
 
 
@@ -119,6 +123,12 @@ class MainActivity : AppCompatActivity() {
 
     fun startLogin() {
         val intent = Intent(this, LoginScreen::class.java)
+        startActivity(intent)
+
+    }
+
+    fun startMedicine() {
+        val intent = Intent(this, MedicineScreen::class.java)
         startActivity(intent)
 
     }
