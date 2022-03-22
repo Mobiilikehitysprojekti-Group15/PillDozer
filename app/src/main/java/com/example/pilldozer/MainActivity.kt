@@ -1,6 +1,7 @@
 package com.example.pilldozer
 
 import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -9,7 +10,11 @@ import android.view.MenuItem
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import com.example.pilldozer.databinding.ActivityMainBinding
+import java.time.LocalDate
+import java.time.LocalTime
+import java.time.format.DateTimeFormatter
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,6 +29,7 @@ class MainActivity : AppCompatActivity() {
 
 
     lateinit var binding: ActivityMainBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,6 +49,7 @@ class MainActivity : AppCompatActivity() {
         else {
             setContentView(binding.root)
         }
+
 
         val timeTextView: TextView = findViewById(R.id.countTime)
 
@@ -132,6 +139,7 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
 
     }
+
 }
 
 /*
