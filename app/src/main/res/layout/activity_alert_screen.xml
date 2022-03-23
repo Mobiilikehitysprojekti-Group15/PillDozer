@@ -45,7 +45,7 @@
         </LinearLayout>
 
         <EditText
-            android:id="@+id/fragment_createalarm_title"
+            android:id="@+id/giveMedName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Lääkkeen nimi"
@@ -55,14 +55,14 @@
             app:layout_constraintTop_toBottomOf="@+id/fragment_createalarm_timePickerLayout" />
 
         <EditText
-            android:id="@+id/fragment_createalarm_quantity"
+            android:id="@+id/giveMedQuantity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Kerta-annoksen määrä"
             android:minHeight="48dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_createalarm_title" />
+            app:layout_constraintTop_toBottomOf="@+id/giveMedName" />
 
         <CheckBox
             android:id="@+id/fragment_createalarm_recurring"
@@ -71,7 +71,7 @@
             android:checked="false"
             android:text="Toistuva muistutus"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_createalarm_quantity" />
+            app:layout_constraintTop_toBottomOf="@+id/giveMedQuantity" />
 
         <LinearLayout
             android:id="@+id/fragment_createalarm_recurring_options"
@@ -127,7 +127,7 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/fragment_createalarm_scheduleAlarm"
+            android:id="@+id/buSaveNewMed"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
