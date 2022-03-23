@@ -7,10 +7,11 @@ import android.widget.Button
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class MedicineScreen : AppCompatActivity() {
+open class MedicineScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_medicine)
+
 
 
         // getting the recyclerview by its id
@@ -33,6 +34,20 @@ class MedicineScreen : AppCompatActivity() {
 
         // Setting the Adapter with the recyclerview
         recyclerview.adapter = adapter
+
+        val givenMedName = intent.getStringExtra("medicineName")
+        val givenMedQuantity = intent.getStringExtra("medicineQuantity")
+
+        if (givenMedName != "" && givenMedQuantity != "") {
+            data.add(ItemsViewModel(R.drawable.ic_healing, AlertScreen.MedDataObject.medicineName, AlertScreen.MedDataObject.medicineQuantity))
+        }
+
+        fun newItemViewModel() {
+            data.add(ItemsViewModel(R.drawable.ic_healing, AlertScreen.MedDataObject.medicineName, AlertScreen.MedDataObject.medicineQuantity))
+        }
+
+        
+
 
 
 
