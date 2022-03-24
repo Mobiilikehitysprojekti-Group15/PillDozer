@@ -42,6 +42,7 @@ open class MedicineScreen : AppCompatActivity() {
             data.add(ItemsViewModel(R.drawable.ic_healing, AlertScreen.MedDataObject.medicineName, AlertScreen.MedDataObject.medicineQuantity))
         }
 
+
         fun newItemViewModel() {
             data.add(ItemsViewModel(R.drawable.ic_healing, AlertScreen.MedDataObject.medicineName, AlertScreen.MedDataObject.medicineQuantity))
         }

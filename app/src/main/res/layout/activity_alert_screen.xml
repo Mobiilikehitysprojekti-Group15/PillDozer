@@ -135,6 +135,18 @@
             app:layout_constraintBottom_toBottomOf="parent"
             tools:layout_editor_absoluteX="133dp" />
 
+        <TextView
+            android:id="@+id/medAddError"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="60dp"
+            android:textColor="#F60B0B"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/buSaveNewMed"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragment_createalarm_recurring_options" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>
