@@ -64,6 +64,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/giveMedName" />
 
+        <EditText
+            android:id="@+id/giveMedDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Lääkken kuvaus"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/giveMedQuantity" />
+
         <CheckBox
             android:id="@+id/fragment_createalarm_recurring"
             android:layout_width="match_parent"
@@ -71,7 +81,7 @@
             android:checked="false"
             android:text="Toistuva muistutus"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/giveMedQuantity" />
+            app:layout_constraintTop_toBottomOf="@+id/giveMedDescription" />
 
         <LinearLayout
             android:id="@+id/fragment_createalarm_recurring_options"

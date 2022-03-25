@@ -11,8 +11,14 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.textfield.TextInputEditText
 
-class AlertScreen : AppCompatActivity() {
+const val MEDICINE_NAME =  "name"
+const val MEDICINE_QUANTITY = "quantity"
+const val MEDICINE_DESCRIPTION = "description"
 
+class AlertScreen : AppCompatActivity() {
+    private lateinit var addMedicineName: TextInputEditText
+    private lateinit var addMedicineQuantity: TextInputEditText
+    private lateinit var addMedicineDescription: TextInputEditText
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,14 +31,15 @@ class AlertScreen : AppCompatActivity() {
         actionbar.setDisplayHomeAsUpEnabled(true)
 
 
-
-
-
         val saveMedButton: Button = findViewById(R.id.buSaveNewMed)
         saveMedButton.setOnClickListener {
-
             addMedicine()
         }
+        addMedicineName = findViewById(R.id.giveMedName)
+        addMedicineQuantity = findViewById(R.id.giveMedQuantity)
+        addMedicineDescription = findViewById(R.id.giveMedDescription)
+
+
         //val editTextMedName = findViewById<EditText>(R.id.giveMedName)
         //editTextMedQuantity = findViewById<EditText>(R.id.giveMedQuantity)
 
@@ -44,17 +51,20 @@ class AlertScreen : AppCompatActivity() {
     private fun addMedicine() {
         val resultIntent = Intent()
 
-        val editTextMedName = findViewById<EditText>(R.id.giveMedName)
-        val editTextMedQuantity = findViewById<EditText>(R.id.giveMedQuantity)
-
-        MedDataObject.medicineName = editTextMedName.text.toString()
-        MedDataObject.medicineQuantity = editTextMedQuantity.text.toString()
-
-        if (MedDataObject.medicineName.isNullOrEmpty() || MedDataObject.medicineQuantity.isNullOrEmpty()) {
+        if (addMedicineName.text.isNullOrEmpty() || addMedicineQuantity.text.isNullOrEmpty() || addMedicineDescription.text.isNullOrEmpty()) {
             val noMedAddedText: TextView = findViewById(R.id.medAddError)
             noMedAddedText.text = "Anna lääkkeen nimi sekä määrä"
             setResult(Activity.RESULT_CANCELED, resultIntent)
         } else {
+
+            val name = addMedicineName.text.toString()
+            val quantity = addMedicineQuantity.text.toString()
+            val description = addMedicineDescription.text.toString()
+
+            resultIntent.putExtra(MEDICINE_NAME, name)
+            resultIntent.putExtra(MEDICINE_QUANTITY, quantity)
+            resultIntent.putExtra(MEDICINE_DESCRIPTION, description)
+            setResult(Activity.RESULT_OK, resultIntent)
 
             /*val intent = Intent(this, MedicineScreen::class.java)
             intent.putExtra("medicineName", MedDataObject.medicineName)
@@ -62,11 +72,6 @@ class AlertScreen : AppCompatActivity() {
             startActivity(intent)*/
 
 
-
-
-            resultIntent.putExtra("medicineName", MedDataObject.medicineName)
-            resultIntent.putExtra("medicineQuantity", MedDataObject.medicineQuantity)
-            setResult(Activity.RESULT_OK, resultIntent)
         }
         finish()
 
@@ -75,12 +80,6 @@ class AlertScreen : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return true
-
-    }
-
-    object MedDataObject {
-        var medicineName = ""
-        var medicineQuantity = ""
 
     }
 }

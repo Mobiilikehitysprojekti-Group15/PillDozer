@@ -1,4 +1,48 @@
 <resources>
     <string name="app_name">PillDozer</string>
 
+    <string name="medicine1_name">Burana</string>
+    <string name="medicine2_name">Panadol</string>
+    <string name="medicine3_name">Viagra</string>
+    <string name="medicine4_name">Burana</string>
+    <string name="medicine5_name">C-vitamiini</string>
+    <string name="medicine6_name">D-vitamiini</string>
+    <string name="medicine7_name">syöpälääke</string>
+    <string name="medicine8_name">Burana</string>
+    <string name="medicine9_name">Panadol</string>
+    <string name="medicine10_name">Panadol</string>
+    <string name="medicine11_name">Burana</string>
+    <string name="medicine12_name">Es</string>
+
+    <string name="medicine1_quantity">1g</string>
+    <string name="medicine2_quantity">400mg</string>
+    <string name="medicine3_quantity">1 pill</string>
+    <string name="medicine4_quantity">2g</string>
+    <string name="medicine5_quantity">3 pill</string>
+    <string name="medicine6_quantity">10mg</string>
+    <string name="medicine7_quantity">400mg</string>
+    <string name="medicine8_quantity">600mg</string>
+    <string name="medicine9_quantity">500mg</string>
+    <string name="medicine10_quantity">1g</string>
+    <string name="medicine11_quantity">4g</string>
+    <string name="medicine12_quantity">5 tölkkiä</string>
+
+    <string name="medicine1_description">Rose comes from the Latin word Rosa. There are over 100
+        species of the rose. </string>
+    <string name="medicine2_description">Freesias bloom during spring and are native to
+        Africa.</string>
+    <string name="medicine3_description">Lilies have the longest in vase lifespan of any cut
+        bloom.</string>
+    <string name="medicine4_description">Mature Sunflowers face east and are native too the United
+        States.</string>
+    <string name="medicine5_description">Peony plants can live to be 100 years old.</string>
+    <string name="medicine6_description">Daisies are cousins with Sunflowers.</string>
+    <string name="medicine7_description">Lilacs belong to the olive family.</string>
+    <string name="medicine8_description">Marigolds come in orange, reed, maroon and yellow.</string>
+    <string name="medicine9_description">Poppies can be over 3 feet tall.</string>
+    <string name="medicine10_description">Daffodils are referred to as Lent Lilies in England</string>
+    <string name="medicine11_description">Dahlia is named after the Swedish botanist Anders
+        Dahl</string>
+    <string name="medicine12_description">There are over 150 species of tulips.</string>
+
 </resources>
