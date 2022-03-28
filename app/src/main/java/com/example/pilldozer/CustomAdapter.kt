@@ -4,9 +4,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.ListAdapter
+
 import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pilldozer.data.Medicine
 
@@ -18,8 +19,8 @@ class CustomAdapter(private val onClick: (Medicine) -> Unit) :
         RecyclerView.ViewHolder(ItemView) {
         private val imageView: ImageView = itemView.findViewById(R.id.imagePill)
         private val textViewName: TextView = itemView.findViewById(R.id.medName)
-        private val textViewQuantity: TextView = itemView.findViewById(R.id.medQuantity)
-        private val textViewDescription: TextView = itemView.findViewById(R.id.medDescription)
+        //private val textViewQuantity: TextView = itemView.findViewById(R.id.medQuantity)
+        //private val textViewDescription: TextView = itemView.findViewById(R.id.medDescription)
         private var currentMedicine: Medicine? = null
 
         init {

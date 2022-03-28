@@ -49,4 +49,7 @@ dependencies {
 
     // for adding cardview
     implementation 'androidx.cardview:cardview:1.0.0'
+
+
+    implementation "androidx.activity:activity-ktx:1.4.0"
 }
