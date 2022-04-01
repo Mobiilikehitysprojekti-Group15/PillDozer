@@ -10,6 +10,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PillDozer">
         <activity
+            android:name=".medicineDetail.MedicineDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AlertScreen"
+            android:exported="false" />
+        <activity
+            android:name=".MedicineScreen"
+            android:exported="false" />
+        <activity
+            android:name=".LoginScreen"
+            android:exported="false" />
+        <activity
+            android:name=".FeedBackScreen"
+            android:exported="false" />
+        <activity
+            android:name=".AboutUsScreen"
+            android:exported="false" />
+        <activity
+            android:name=".HistoryScreen"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -18,6 +39,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".SettingsScreen" />
     </application>
 
 </manifest>

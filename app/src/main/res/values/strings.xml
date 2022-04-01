@@ -1,3 +1,43 @@
 <resources>
     <string name="app_name">PillDozer</string>
+
+    <string name="medicine1_name">Burana</string>
+    <string name="medicine2_name">Panadol</string>
+    <string name="medicine3_name">Multi-vitamiini</string>
+    <string name="medicine4_name">Burana</string>
+    <string name="medicine5_name">C-vitamiini</string>
+    <string name="medicine6_name">D-vitamiini</string>
+    <string name="medicine7_name">Burana</string>
+    <string name="medicine8_name">Burana</string>
+    <string name="medicine9_name">Panadol</string>
+    <string name="medicine10_name">Panadol</string>
+    <string name="medicine11_name">Burana</string>
+
+
+    <string name="medicine1_quantity">1g</string>
+    <string name="medicine2_quantity">400mg</string>
+    <string name="medicine3_quantity">1 pill</string>
+    <string name="medicine4_quantity">2g</string>
+    <string name="medicine5_quantity">3 pill</string>
+    <string name="medicine6_quantity">10mg</string>
+    <string name="medicine7_quantity">400mg</string>
+    <string name="medicine8_quantity">600mg</string>
+    <string name="medicine9_quantity">500mg</string>
+    <string name="medicine10_quantity">1g</string>
+    <string name="medicine11_quantity">4g</string>
+
+
+    <string name="medicine1_description">Lorem Ipsum </string>
+    <string name="medicine2_description">Lorem Ipsum </string>
+    <string name="medicine3_description">Lorem Ipsum </string>
+    <string name="medicine4_description">Lorem Ipsum </string>
+    <string name="medicine5_description">Lorem Ipsum </string>
+    <string name="medicine6_description">Lorem Ipsum </string>
+    <string name="medicine7_description">Lorem Ipsum </string>
+    <string name="medicine8_description">Lorem Ipsum </string>
+    <string name="medicine9_description">Lorem Ipsum </string>
+    <string name="medicine10_description">Lorem Ipsum </string>
+    <string name="medicine11_description">Lorem Ipsum </string>
+
+
 </resources>
