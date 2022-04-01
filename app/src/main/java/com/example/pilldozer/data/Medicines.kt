@@ -83,13 +83,6 @@ fun medicineList(resources: Resources): List<Medicine> {
             quantity = resources.getString(R.string.medicine11_quantity),
             image = R.drawable.ic_healing,
             description = resources.getString(R.string.medicine11_description)
-        ),
-        Medicine(
-            id = 12,
-            name = resources.getString(R.string.medicine12_name),
-            quantity = resources.getString(R.string.medicine12_quantity),
-            image = R.drawable.ic_healing,
-            description = resources.getString(R.string.medicine12_description)
-    )
+        )
     )
 }

@@ -24,8 +24,8 @@ const val MEDICINE_ID = "medicine id"
 
 class MedicineScreen : AppCompatActivity() {
     private val newMedicineActivityRequestCode = 1
-    private val itemsViewModel by viewModels<ItemsViewModel> {
-        ItemsViewModelFactory(this)
+    private val medicineListViewModel by viewModels<MedicineListViewModel> {
+        MedicineListViewModelFactory(this)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,11 +42,12 @@ class MedicineScreen : AppCompatActivity() {
 
 
         // this creates a vertical layout Manager
-        //recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.layoutManager = LinearLayoutManager(this)
 
-        ItemsViewModel.medicineLiveData.observe(this, {
+        medicineListViewModel.medicineLiveData.observe(this, {
             it?.let {
                 medicineAdapter.submitList(it as MutableList<Medicine>)
+                headerAdapter.updateMedicineCount(it.size)
             }
         })
 
@@ -80,7 +81,11 @@ class MedicineScreen : AppCompatActivity() {
                 val medicineQuantity = data.getStringExtra(MEDICINE_QUANTITY)
                 val medicineDescription = data.getStringExtra(MEDICINE_DESCRIPTION)
 
-                itemsViewModel.insertMedicine(medicineName, medicineQuantity, medicineDescription)
+                println("tässä mennään")
+                println(medicineName)
+                println(medicineQuantity)
+                println(medicineDescription)
+                medicineListViewModel.insertMedicine(medicineName, medicineQuantity, medicineDescription)
 
             }
         }

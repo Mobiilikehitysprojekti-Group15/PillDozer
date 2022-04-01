@@ -3,6 +3,7 @@ package com.example.pilldozer.data
 import android.content.res.Resources
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.example.pilldozer.R
 
 class DataSource(resources: Resources) {
     private val initialMedicineList = medicineList(resources)
@@ -20,7 +21,7 @@ class DataSource(resources: Resources) {
         }
     }
 
-    //Removin medicine
+    //Removing medicine
     fun removeMedicine(medicine: Medicine) {
         val currentList = medicineLiveData.value
         if (currentList != null) {
@@ -40,6 +41,11 @@ class DataSource(resources: Resources) {
 
     fun getMedicineList(): LiveData<List<Medicine>> {
         return medicineLiveData
+    }
+
+    fun getMedicineImageAsset(): Int {
+
+        return R.drawable.ic_healing
     }
 
 

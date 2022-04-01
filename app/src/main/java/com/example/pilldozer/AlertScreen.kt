@@ -16,9 +16,9 @@ const val MEDICINE_QUANTITY = "quantity"
 const val MEDICINE_DESCRIPTION = "description"
 
 class AlertScreen : AppCompatActivity() {
-    private lateinit var addMedicineName: TextInputEditText
-    private lateinit var addMedicineQuantity: TextInputEditText
-    private lateinit var addMedicineDescription: TextInputEditText
+    private lateinit var addMedicineName: EditText
+    private lateinit var addMedicineQuantity: EditText
+    private lateinit var addMedicineDescription: EditText
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,9 +35,11 @@ class AlertScreen : AppCompatActivity() {
         saveMedButton.setOnClickListener {
             addMedicine()
         }
+
         addMedicineName = findViewById(R.id.giveMedName)
         addMedicineQuantity = findViewById(R.id.giveMedQuantity)
         addMedicineDescription = findViewById(R.id.giveMedDescription)
+
 
 
         //val editTextMedName = findViewById<EditText>(R.id.giveMedName)
@@ -60,6 +62,10 @@ class AlertScreen : AppCompatActivity() {
             val name = addMedicineName.text.toString()
             val quantity = addMedicineQuantity.text.toString()
             val description = addMedicineDescription.text.toString()
+
+            println(name)
+            println(quantity)
+            println(description)
 
             resultIntent.putExtra(MEDICINE_NAME, name)
             resultIntent.putExtra(MEDICINE_QUANTITY, quantity)

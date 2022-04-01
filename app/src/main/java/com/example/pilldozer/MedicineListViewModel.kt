@@ -8,7 +8,7 @@ import com.example.pilldozer.data.Medicine
 import java.lang.IllegalArgumentException
 import kotlin.random.Random
 
-class ItemsViewModel(val dataSource: DataSource) : ViewModel() {
+class MedicineListViewModel(val dataSource: DataSource) : ViewModel() {
 
     val medicineLiveData = dataSource.getMedicineList()
 
@@ -18,25 +18,27 @@ class ItemsViewModel(val dataSource: DataSource) : ViewModel() {
             return
         }
 
-        val image = R.drawable.ic_healing
+        println("inser medicineen paasty")
+        val image = dataSource.getMedicineImageAsset()
         val newMedicine = Medicine(
             Random.nextLong(),
             medicineName,
             medicineQuantity,
-            medicineDescription,
-            image
+            image,
+            medicineDescription
+
         )
 
         dataSource.addMedicine(newMedicine)
     }
 }
 
-class ItemsViewModelFactory(private val context: Context) : ViewModelProvider.Factory {
+class MedicineListViewModelFactory(private val context: Context) : ViewModelProvider.Factory {
 
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        if ( modelClass.isAssignableFrom(ItemsViewModel::class.java)) {
+        if ( modelClass.isAssignableFrom(MedicineListViewModel::class.java)) {
             @Suppress("UNCHECKED_CAST")
-            return ItemsViewModel(
+            return MedicineListViewModel(
                 dataSource = DataSource.getDataSource(context.resources)
             ) as T
         }
