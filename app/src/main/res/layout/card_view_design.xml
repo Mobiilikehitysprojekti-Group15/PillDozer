@@ -19,14 +19,13 @@
             android:layout_height="40dp" />
 
         <TextView
-        android:id="@+id/medName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="15dp"
-        android:text="Lääke"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+            android:id="@+id/medName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="15dp"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/medQuantity"
@@ -34,7 +33,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginLeft="15dp"
-            android:text="Määrä"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -44,7 +42,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginLeft="15dp"
-            android:text="Kuvaus"
             android:textSize="20sp"
             android:textStyle="bold" />
 

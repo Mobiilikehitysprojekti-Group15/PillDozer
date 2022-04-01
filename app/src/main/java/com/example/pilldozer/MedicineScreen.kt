@@ -81,10 +81,6 @@ class MedicineScreen : AppCompatActivity() {
                 val medicineQuantity = data.getStringExtra(MEDICINE_QUANTITY)
                 val medicineDescription = data.getStringExtra(MEDICINE_DESCRIPTION)
 
-                println("tässä mennään")
-                println(medicineName)
-                println(medicineQuantity)
-                println(medicineDescription)
                 medicineListViewModel.insertMedicine(medicineName, medicineQuantity, medicineDescription)
 
             }

@@ -45,7 +45,7 @@ class DataSource(resources: Resources) {
 
     fun getMedicineImageAsset(): Int {
 
-        return R.drawable.ic_healing
+        return R.drawable.pill_icon
     }
 
 

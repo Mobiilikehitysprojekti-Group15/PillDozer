@@ -19,7 +19,7 @@ class CustomAdapter(private val onClick: (Medicine) -> Unit) :
         RecyclerView.ViewHolder(ItemView) {
         private val imageView: ImageView = itemView.findViewById(R.id.imagePill)
         private val textViewName: TextView = itemView.findViewById(R.id.medName)
-        //private val textViewQuantity: TextView = itemView.findViewById(R.id.medQuantity)
+        private val textViewQuantity: TextView = itemView.findViewById(R.id.medQuantity)
         //private val textViewDescription: TextView = itemView.findViewById(R.id.medDescription)
         private var currentMedicine: Medicine? = null
 
@@ -35,7 +35,7 @@ class CustomAdapter(private val onClick: (Medicine) -> Unit) :
             currentMedicine = medicine
 
             textViewName.text = medicine.name
-            //textViewQuantity.text = medicine.quantity
+            textViewQuantity.text = medicine.quantity
             //textViewDescription.text = medicine.description
             imageView.setImageResource(medicine.image!!)
         }

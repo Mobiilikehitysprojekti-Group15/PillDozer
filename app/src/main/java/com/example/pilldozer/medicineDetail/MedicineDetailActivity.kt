@@ -18,6 +18,8 @@ class MedicineDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_medicine_detail)
 
+
+
         var currentMedicineId: Long? = null
 
         val medicineName: TextView = findViewById(R.id.tvMedicineName)
@@ -45,5 +47,14 @@ class MedicineDetailActivity : AppCompatActivity() {
 
         }
 
+        val actionbar = supportActionBar
+        actionbar!!.title = medicineName.text
+        actionbar.setDisplayHomeAsUpEnabled(true)
+
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }

@@ -55,7 +55,7 @@ class AlertScreen : AppCompatActivity() {
 
         if (addMedicineName.text.isNullOrEmpty() || addMedicineQuantity.text.isNullOrEmpty() || addMedicineDescription.text.isNullOrEmpty()) {
             val noMedAddedText: TextView = findViewById(R.id.medAddError)
-            noMedAddedText.text = "Anna lääkkeen nimi sekä määrä"
+            noMedAddedText.text = "Anna lääkkeen nimi, määrä sekä kuvaus"
             setResult(Activity.RESULT_CANCELED, resultIntent)
         } else {
 
@@ -72,6 +72,8 @@ class AlertScreen : AppCompatActivity() {
             resultIntent.putExtra(MEDICINE_DESCRIPTION, description)
             setResult(Activity.RESULT_OK, resultIntent)
 
+            finish()
+
             /*val intent = Intent(this, MedicineScreen::class.java)
             intent.putExtra("medicineName", MedDataObject.medicineName)
             intent.putExtra("medicineQuantity", MedDataObject.medicineQuantity)
@@ -79,7 +81,7 @@ class AlertScreen : AppCompatActivity() {
 
 
         }
-        finish()
+
 
     }
 
