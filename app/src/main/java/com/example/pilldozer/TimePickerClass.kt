@@ -12,6 +12,10 @@ import java.time.format.FormatStyle
 class TimePickerClass {
 
 
+
+
+
+
     fun getTimePickerHour(tp: TimePicker): Int {
         return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             tp.hour
@@ -31,9 +35,11 @@ class TimePickerClass {
 
 
 
-/*
+
     @RequiresApi(Build.VERSION_CODES.O)
     public fun dateTimePicker() {
+
+
 
         val currentDate = LocalDate.now()
         val currentTime = LocalTime.now()
@@ -46,5 +52,7 @@ class TimePickerClass {
 
         println("Current Date is: $dateFormatted")
         println("Current Time is: $timeFormatted")
-    }*/
+    }
+
+
 }

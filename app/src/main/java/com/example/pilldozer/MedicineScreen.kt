@@ -6,18 +6,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 
-import android.widget.Button
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.ConcatAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.pilldozer.R
 import com.example.pilldozer.data.Medicine
 import com.example.pilldozer.medicineDetail.MedicineDetailActivity
-import com.example.pilldozer.AlertScreen
-import com.example.pilldozer.MEDICINE_NAME
-import com.example.pilldozer.MEDICINE_DESCRIPTION
-import com.example.pilldozer.MEDICINE_QUANTITY
 
 
 const val MEDICINE_ID = "medicine id"
@@ -27,6 +21,9 @@ class MedicineScreen : AppCompatActivity() {
     private val medicineListViewModel by viewModels<MedicineListViewModel> {
         MedicineListViewModelFactory(this)
     }
+
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -80,6 +77,9 @@ class MedicineScreen : AppCompatActivity() {
                 val medicineName = data.getStringExtra(MEDICINE_NAME)
                 val medicineQuantity = data.getStringExtra(MEDICINE_QUANTITY)
                 val medicineDescription = data.getStringExtra(MEDICINE_DESCRIPTION)
+                //val medicineHour = data.getIntExtra(MEDICINE_HOUR)
+                //val medicineMinute = data.getIntExtra(MEDICINE_MINUTE)
+
 
                 medicineListViewModel.insertMedicine(medicineName, medicineQuantity, medicineDescription)
 
@@ -129,3 +129,4 @@ class MedicineScreen : AppCompatActivity() {
 
     }
 }
+

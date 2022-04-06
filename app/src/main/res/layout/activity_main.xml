@@ -27,28 +27,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo3" />
-
-    <TextView
-        android:id="@+id/countTime"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:gravity="center"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="@+id/tvLogoName"
-        app:layout_constraintStart_toStartOf="@+id/tvLogoName"
-        app:layout_constraintTop_toBottomOf="@+id/tvLogoName" />
-
-    <Button
-        android:id="@+id/BuStartCount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="Start Countdown"
-        app:layout_constraintEnd_toEndOf="@+id/countTime"
-        app:layout_constraintStart_toStartOf="@+id/countTime"
-        app:layout_constraintTop_toBottomOf="@+id/countTime" />
+        app:srcCompat="@drawable/logo3"
+        android:contentDescription="Logo" />
 
     <Button
         android:id="@+id/buMedicine"
@@ -56,7 +36,8 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="20dp"
-        android:text="Lääkkeet"
+        android:text="@string/medicine_button_fi"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
