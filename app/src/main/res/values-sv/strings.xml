@@ -64,6 +64,7 @@
     <string name="about_us">Om oss</string>
     <string name="medical_history">Medicinsk historia</string>
     <string name="feedback">Respons</string>
+    <string name="language_button">Vaihda kieli</string>
 
 
 </resources>

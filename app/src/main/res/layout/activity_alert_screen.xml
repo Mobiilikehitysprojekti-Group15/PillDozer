@@ -15,7 +15,7 @@
             android:id="@+id/tv_medHeader"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/new_medicine""
+            android:text="@string/new_medicine"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             app:layout_constraintTop_toTopOf="parent" />

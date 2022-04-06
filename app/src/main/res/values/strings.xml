@@ -61,6 +61,7 @@
     <string name="about_us">Tietoa meistä</string>
     <string name="medical_history">Lääkehistoria</string>
     <string name="feedback">Anna palautetta</string>
+    <string name="language_button">Vaihda kieli</string>
 
 
 </resources>

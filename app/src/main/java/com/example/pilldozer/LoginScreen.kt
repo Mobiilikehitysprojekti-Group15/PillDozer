@@ -17,8 +17,11 @@ class LoginScreen : AppCompatActivity() {
             loginCheck = true
             onBackPressed()
 
+        }
+        val buttonLanguage: Button = findViewById(R.id.lang_button)
+        buttonLanguage.setOnClickListener {
 
-
+            
         }
     }
 }
