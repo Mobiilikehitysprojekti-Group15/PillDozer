@@ -15,7 +15,7 @@
             android:id="@+id/tv_medHeader"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Uusi lääke"
+            android:text="@string/new_medicine_fin""
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             app:layout_constraintTop_toTopOf="parent" />
@@ -32,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="0.4"
-                android:text="Muistutus aika"
+                android:text="@string/reminder_time_fin"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
@@ -48,7 +48,7 @@
             android:id="@+id/giveMedName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Lääkkeen nimi"
+            android:hint="@string/medicine_name_fin"
             android:minHeight="48dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -58,7 +58,7 @@
             android:id="@+id/giveMedQuantity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Kerta-annoksen määrä"
+            android:hint="@string/medicine_quantity_fin"
             android:minHeight="48dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -68,7 +68,7 @@
             android:id="@+id/giveMedDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Lääkken kuvaus"
+            android:hint="@string/medicine_description_fin"
             android:minHeight="48dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -79,7 +79,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:checked="false"
-            android:text="Toistuva muistutus"
+            android:text="@string/recurring_reminder_fin"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/giveMedDescription" />
 
@@ -96,43 +96,43 @@
                 android:id="@+id/fragment_createalarm_checkMon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ma" />
+                android:text="@string/monday_fin" />
 
             <CheckBox
                 android:id="@+id/fragment_createalarm_checkTue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ti" />
+                android:text="@string/tuesday_fin" />
 
             <CheckBox
                 android:id="@+id/fragment_createalarm_checkWed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ke" />
+                android:text="@string/wednesday_fin" />
 
             <CheckBox
                 android:id="@+id/fragment_createalarm_checkThu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="To" />
+                android:text="@string/thursday_fin" />
 
             <CheckBox
                 android:id="@+id/fragment_createalarm_checkFri"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Pe" />
+                android:text="@string/friday_fin" />
 
             <CheckBox
                 android:id="@+id/fragment_createalarm_checkSat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="La" />
+                android:text="@string/saturday_fin" />
 
             <CheckBox
                 android:id="@+id/fragment_createalarm_checkSun"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Su" />
+                android:text="@string/sunday_fin" />
 
         </LinearLayout>
 
@@ -141,7 +141,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Lisää lääke"
+            android:text="@string/add_medicine_fin"
             android:backgroundTint="#188100"
             app:layout_constraintBottom_toBottomOf="parent"
             tools:layout_editor_absoluteX="133dp" />

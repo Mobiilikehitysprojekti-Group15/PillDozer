@@ -39,5 +39,28 @@
     <string name="medicine10_description">Lorem Ipsum </string>
     <string name="medicine11_description">Lorem Ipsum </string>
 
+    <string name="log_in_fin">Kirjaudu Sisään</string>
+    <string name="enter_name_fin">Syötä nimi</string>
+    <string name="medicines_fin">Lääkkeet</string>
+    <string name="medicine_name_fin">Lääkkeen nimi</string>
+    <string name="medicine_quantity_fin">Kerta-annoksen määrä</string>
+    <string name="medicine_description_fin">Lisätietoja</string>
+    <string name="delete_medicine_fin">Poista lääke</string>
+    <string name="new_medicine_fin">Uusi lääke</string>
+    <string name="reminder_time_fin">Muistutus aika</string>
+    <string name="recurring_reminder_fin">Toistuva muistutus</string>
+    <string name="monday_fin">Ma</string>
+    <string name="tuesday_fin">Ti</string>
+    <string name="wednesday_fin">Ke</string>
+    <string name="thursday_fin">To</string>
+    <string name="friday_fin">Pe</string>
+    <string name="saturday_fin">La</string>
+    <string name="sunday_fin">Su</string>
+    <string name="add_medicine_fin">Lisää lääke</string>
+    <string name="settings_fin">Asetukset</string>
+    <string name="about_us_fin">Tietoa meistä</string>
+    <string name="medical_history_fin">Lääkehistoria</string>
+    <string name="feedback_fin">Anna palautetta</string>
+
 
 </resources>
