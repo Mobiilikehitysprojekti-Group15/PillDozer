@@ -15,7 +15,7 @@
             android:id="@+id/tv_medHeader"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/new_medicine_fin""
+            android:text="@string/new_medicine""
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             app:layout_constraintTop_toTopOf="parent" />
@@ -32,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="0.4"
-                android:text="@string/reminder_time_fin"
+                android:text="@string/reminder_time"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
@@ -48,7 +48,7 @@
             android:id="@+id/giveMedName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/medicine_name_fin"
+            android:hint="@string/medicine_name"
             android:minHeight="48dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -58,7 +58,7 @@
             android:id="@+id/giveMedQuantity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/medicine_quantity_fin"
+            android:hint="@string/medicine_quantity"
             android:minHeight="48dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -68,7 +68,7 @@
             android:id="@+id/giveMedDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/medicine_description_fin"
+            android:hint="@string/medicine_description"
             android:minHeight="48dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -79,7 +79,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:checked="false"
-            android:text="@string/recurring_reminder_fin"
+            android:text="@string/recurring_reminder"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/giveMedDescription" />
 
@@ -96,43 +96,43 @@
                 android:id="@+id/fragment_createalarm_checkMon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/monday_fin" />
+                android:text="@string/monday" />
 
             <CheckBox
                 android:id="@+id/fragment_createalarm_checkTue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/tuesday_fin" />
+                android:text="@string/tuesday" />
 
             <CheckBox
                 android:id="@+id/fragment_createalarm_checkWed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/wednesday_fin" />
+                android:text="@string/wednesday" />
 
             <CheckBox
                 android:id="@+id/fragment_createalarm_checkThu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/thursday_fin" />
+                android:text="@string/thursday" />
 
             <CheckBox
                 android:id="@+id/fragment_createalarm_checkFri"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/friday_fin" />
+                android:text="@string/friday" />
 
             <CheckBox
                 android:id="@+id/fragment_createalarm_checkSat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/saturday_fin" />
+                android:text="@string/saturday" />
 
             <CheckBox
                 android:id="@+id/fragment_createalarm_checkSun"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/sunday_fin" />
+                android:text="@string/sunday" />
 
         </LinearLayout>
 
@@ -141,7 +141,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/add_medicine_fin"
+            android:text="@string/add_medicine"
             android:backgroundTint="#188100"
             app:layout_constraintBottom_toBottomOf="parent"
             tools:layout_editor_absoluteX="133dp" />
