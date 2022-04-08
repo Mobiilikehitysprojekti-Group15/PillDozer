@@ -1,6 +1,11 @@
 package com.example.pilldozer
 
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.app.PendingIntent
+import android.content.Context
 import android.content.Intent
+import android.graphics.BitmapFactory
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -11,6 +16,8 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
 import com.example.pilldozer.databinding.ActivityMainBinding
 import java.time.LocalDate
 import java.time.LocalTime
@@ -18,7 +25,7 @@ import java.time.format.DateTimeFormatter
 
 class MainActivity : AppCompatActivity() {
 
-
+    private val CHANNEL_ID = "channel1" //notificationId = 1
 
     companion object {
         var loginId: Int? = 0 // Käyttäjän id
@@ -68,6 +75,11 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        val notifButton: Button = findViewById(R.id.ScheduleMedi)
+        notifButton.setOnClickListener {
+            mediScheduler()
+        }
+
         val medicineListButton: Button = findViewById(R.id.buMedicine)
         medicineListButton.setOnClickListener {
             startMedicine()
@@ -108,6 +120,20 @@ class MainActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
+    /*private fun createNotificationChannel(){
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.0){
+            val name = "Notification Title"
+            val descriptionText = "Notification Description"
+            val importance = NotificationManager.IMPORTANCE_DEFAULT
+            val channel = NotificationChannel(CHANNEL_ID,name,importance).apply{
+                description=descriptionText
+            }
+            val notificationManager : NotificationManager =
+                getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+            notificationManager.createNotificationChannel(channel)
+        }
+    }*/
+
     private fun startSettings() {
         val intent = Intent(this, SettingsScreen::class.java)
         startActivity(intent)
@@ -126,6 +152,27 @@ class MainActivity : AppCompatActivity() {
     private fun startFeedback() {
         val intent = Intent(this, FeedBackScreen::class.java)
         startActivity(intent)
+    }
+
+    private fun mediScheduler() {
+        val intent = Intent(this,NotifActivity::class.java).apply{
+            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        }
+        val pendingIntent: PendingIntent = PendingIntent.getActivity(this,0,intent,0)
+        val bitmap = BitmapFactory.decodeResource(applicationContext.resources, R.drawable.pill_icon)
+
+        val builder = NotificationCompat.Builder(this,CHANNEL_ID)
+            .setSmallIcon(R.drawable.ic_launcher_foreground)
+            .setContentTitle("Lääke")
+            .setLargeIcon(bitmap)
+            .setContentText("Ota ne lääkkeet")
+            .setContentIntent(pendingIntent)
+            .setPriority(NotificationCompat.PRIORITY_HIGH)
+            .setAutoCancel(true)
+
+        with(NotificationManagerCompat.from(this)){
+            notify(1,builder.build())
+        }
     }
 
     fun startLogin() {

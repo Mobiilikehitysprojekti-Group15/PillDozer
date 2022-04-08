@@ -10,7 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PillDozer">
         <activity
-<<<<<<< Updated upstream
             android:name=".medicineDetail.MedicineDetailActivity"
             android:exported="false" />
         <activity
@@ -30,9 +29,6 @@
             android:exported="false" />
         <activity
             android:name=".HistoryScreen"
-=======
-            android:name=".NotifActivity"
->>>>>>> Stashed changes
             android:exported="false" />
         <activity
             android:name=".MainActivity"
