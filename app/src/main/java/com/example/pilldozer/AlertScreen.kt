@@ -1,14 +1,19 @@
 package com.example.pilldozer
 
 import android.app.Activity
+import android.app.AlarmManager
+import android.app.PendingIntent
+import android.content.BroadcastReceiver
+import android.content.Context
 import android.content.Intent
+import android.icu.util.Calendar
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.TimePicker
+import android.widget.*
+import com.example.pilldozer.alarmStuff.AlarmReceiver
 
 const val MEDICINE_NAME =  "name"
 const val MEDICINE_QUANTITY = "quantity"
@@ -20,6 +25,7 @@ class AlertScreen : AppCompatActivity() {
     private lateinit var addMedicineName: EditText
     private lateinit var addMedicineQuantity: EditText
     private lateinit var addMedicineDescription: EditText
+    lateinit var timePicker: TimePicker
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,23 +48,14 @@ class AlertScreen : AppCompatActivity() {
         addMedicineQuantity = findViewById(R.id.giveMedQuantity)
         addMedicineDescription = findViewById(R.id.giveMedDescription)
 
-
-
-
-        //val editTextMedName = findViewById<EditText>(R.id.giveMedName)
-        //editTextMedQuantity = findViewById<EditText>(R.id.giveMedQuantity)
-
-        //MedDataObject.medicineName = editTextMedName.text.toString()
-        //MedDataObject.medicineQuantity = editTextMedQuantity.text.toString()
-
     }
 
 
 
-    private fun onClickTime() {
+    fun onClickTime() {
 
         val textView = findViewById<TextView>(R.id.tvTime)
-        val timePicker = findViewById<TimePicker>(R.id.timePickerSpinner)
+        timePicker = findViewById<TimePicker>(R.id.timePickerSpinner)
         timePicker.setIs24HourView(true)
 
         timePicker.setOnTimeChangedListener { _, hour, minute -> var hour = hour
@@ -106,6 +103,8 @@ class AlertScreen : AppCompatActivity() {
             println(hourTemp)
             println(minuteTemp)
 
+            createAlarm()
+
             resultIntent.putExtra(MEDICINE_NAME, name)
             resultIntent.putExtra(MEDICINE_QUANTITY, quantity)
             resultIntent.putExtra(MEDICINE_DESCRIPTION, description)
@@ -122,9 +121,60 @@ class AlertScreen : AppCompatActivity() {
 
 
         }
-
-
     }
+
+    fun createAlarm() {
+
+
+
+        val calendar: Calendar = Calendar.getInstance()
+        if (Build.VERSION.SDK_INT >= 23) {
+            calendar.set(
+                calendar.get(Calendar.YEAR),
+                calendar.get(Calendar.MONTH),
+                calendar.get(Calendar.DAY_OF_MONTH),
+                timePicker.hour,
+                timePicker.minute,
+                0
+            )
+        } else {
+            calendar.set(
+                calendar.get(Calendar.YEAR),
+                calendar.get(Calendar.MONTH),
+                calendar.get(Calendar.DAY_OF_MONTH),
+                timePicker.currentHour,
+                timePicker.currentMinute,
+                0
+            )
+        }
+        setAlarm(calendar.timeInMillis)
+    }
+
+    private fun setAlarm(timeInMillis: Long) {
+
+        val alarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
+        val intent = Intent(this, AlarmReceiver.AlarmReceiver::class.java)
+        val pendingIntent = PendingIntent.getBroadcast(this, 0, intent, 0)
+
+        alarmManager.setExact(AlarmManager.RTC_WAKEUP, timeInMillis, pendingIntent)
+        Toast.makeText(this, "Alarm is set", Toast.LENGTH_SHORT).show()
+    }
+    /*
+    private class MyAlarm : BroadcastReceiver() {
+
+        override fun onReceive(
+            context: Context,
+            intent: Intent
+        ) {
+
+            println("Hälytyyyss")
+            Log.d("Alarm Bell", "Alarm just fired")
+
+        }
+
+    }*/
+
+
 
 
     companion object {
