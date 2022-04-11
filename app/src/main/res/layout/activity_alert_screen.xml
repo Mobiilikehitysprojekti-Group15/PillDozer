@@ -28,6 +28,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_medHeader">
 
             <TextView
+                android:id="@+id/tvTime"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -37,7 +38,7 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
             <TimePicker
-                android:id="@+id/fragment_createalarm_timePicker"
+                android:id="@+id/timePickerSpinner"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.6"

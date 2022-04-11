@@ -51,6 +51,7 @@ class MainActivity : AppCompatActivity() {
         }
 
 
+        /*
         val timeTextView: TextView = findViewById(R.id.countTime)
 
         val startCountButton: Button = findViewById(R.id.BuStartCount)
@@ -67,13 +68,12 @@ class MainActivity : AppCompatActivity() {
             }.start()
 
         }
+        */
 
         val medicineListButton: Button = findViewById(R.id.buMedicine)
         medicineListButton.setOnClickListener {
             startMedicine()
         }
-
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -139,18 +139,5 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
 
     }
-
 }
 
-/*
-object : CountDownTimer(30000, 1000) {
-
-      override fun onTick(millisUntilFinished: Long) {
-          mTextField.setText("seconds remaining: " + millisUntilFinished / 1000)
-      }
-
-      override fun onFinish() {
-          mTextField.setText("done!")
-      }
-  }.start()
- */

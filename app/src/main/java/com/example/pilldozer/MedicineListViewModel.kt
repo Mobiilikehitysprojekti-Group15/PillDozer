@@ -13,7 +13,12 @@ class MedicineListViewModel(val dataSource: DataSource) : ViewModel() {
     val medicineLiveData = dataSource.getMedicineList()
 
     // If name, quantity and description are given, create new Medicine
-    fun insertMedicine(medicineName: String?, medicineQuantity: String?, medicineDescription: String?) {
+    fun insertMedicine(
+        medicineName: String?,
+        medicineQuantity: String?,
+        medicineDescription: String?,
+
+    ) {
         if (medicineName == null || medicineQuantity == null || medicineDescription == null) {
             return
         }

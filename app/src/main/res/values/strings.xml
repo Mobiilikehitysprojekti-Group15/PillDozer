@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PillDozer</string>
+    <string name="app_name" translatable="false">PillDozer</string>
 
     <string name="medicine1_name">Burana</string>
     <string name="medicine2_name">Panadol</string>
@@ -38,6 +38,11 @@
     <string name="medicine9_description">Lorem Ipsum </string>
     <string name="medicine10_description">Lorem Ipsum </string>
     <string name="medicine11_description">Lorem Ipsum </string>
+
+
+    <string name="start_count_button">Start countdown</string>
+    <string name="medicine_button_fi">Lääkkeet</string>
+    <string name="login_button_text">kirjaudu sisään</string>
 
 
 </resources>
