@@ -167,6 +167,7 @@ class MainActivity : AppCompatActivity() {
             .setLargeIcon(bitmap)
             .setContentText("Ota ne lääkkeet")
             .setContentIntent(pendingIntent)
+
             .setPriority(NotificationCompat.PRIORITY_HIGH)
             .setAutoCancel(true)
 
