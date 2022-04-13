@@ -14,6 +14,7 @@ import com.example.pilldozer.data.Medicine
 import com.example.pilldozer.medicineDetail.MedicineDetailActivity
 
 
+
 const val MEDICINE_ID = "medicine id"
 
 class MedicineScreen : AppCompatActivity() {

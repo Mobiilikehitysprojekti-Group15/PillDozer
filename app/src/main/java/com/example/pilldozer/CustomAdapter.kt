@@ -17,6 +17,7 @@ class CustomAdapter(private val onClick: (Medicine) -> Unit) :
     // Holds the views for adding it to image and text
     class MedicineViewHolder(ItemView: View, val onClick: (Medicine) -> Unit) :
         RecyclerView.ViewHolder(ItemView) {
+
         private val imageView: ImageView = itemView.findViewById(R.id.imagePill)
         private val textViewName: TextView = itemView.findViewById(R.id.medName)
         private val textViewQuantity: TextView = itemView.findViewById(R.id.medQuantity)

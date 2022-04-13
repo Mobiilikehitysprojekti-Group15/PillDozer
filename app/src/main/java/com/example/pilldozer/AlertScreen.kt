@@ -63,8 +63,7 @@ class AlertScreen : AppCompatActivity() {
             if (textView != null) {
 
 
-                // this would make the time format like 00:00 if the time is smaller than 10 rather than 0:0
-                // it's nicer looking but breaks the code because then its string rather than int
+                // this makes the time format like 00:00 if the time is smaller than 10 rather than 0:0
                 val hourStr = if (hour < 10) "0" + hour else hour
                 val min = if (minute < 10) "0" + minute else minute
 
@@ -114,18 +113,10 @@ class AlertScreen : AppCompatActivity() {
 
             finish()
 
-            /*val intent = Intent(this, MedicineScreen::class.java)
-            intent.putExtra("medicineName", MedDataObject.medicineName)
-            intent.putExtra("medicineQuantity", MedDataObject.medicineQuantity)
-            startActivity(intent)*/
-
-
         }
     }
 
-    fun createAlarm() {
-
-
+    private fun createAlarm() {
 
         val calendar: Calendar = Calendar.getInstance()
         if (Build.VERSION.SDK_INT >= 23) {
@@ -154,27 +145,11 @@ class AlertScreen : AppCompatActivity() {
 
         val alarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
         val intent = Intent(this, AlarmReceiver.AlarmReceiver::class.java)
-        val pendingIntent = PendingIntent.getBroadcast(this, 0, intent, 0)
+        val pendingIntent = PendingIntent.getBroadcast(this, (0..2147483647).random(), intent, 0)
 
         alarmManager.setExact(AlarmManager.RTC_WAKEUP, timeInMillis, pendingIntent)
         Toast.makeText(this, "Alarm is set", Toast.LENGTH_SHORT).show()
     }
-    /*
-    private class MyAlarm : BroadcastReceiver() {
-
-        override fun onReceive(
-            context: Context,
-            intent: Intent
-        ) {
-
-            println("Hälytyyyss")
-            Log.d("Alarm Bell", "Alarm just fired")
-
-        }
-
-    }*/
-
-
 
 
     companion object {
