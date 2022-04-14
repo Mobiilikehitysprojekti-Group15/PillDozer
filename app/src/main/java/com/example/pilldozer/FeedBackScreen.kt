@@ -9,6 +9,10 @@ import android.widget.EditText
 import android.widget.RatingBar
 import android.widget.TextView
 import com.google.android.material.textfield.TextInputEditText
+import com.example.pilldozer.MainActivity.Companion.overAllRating
+import com.example.pilldozer.MainActivity.Companion.timesRated
+import java.math.BigDecimal
+import java.math.RoundingMode
 
 const val FEEDBACK_COMMENT =  "comment"
 const val FEEDBACK_STARS = "star_rating"
@@ -23,6 +27,7 @@ class FeedBackScreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_feed_back)
         onClickFeedBack()
+        showAverageRating()
 
         val actionbar = supportActionBar
         actionbar!!.title = "Palaute"
@@ -57,6 +62,17 @@ class FeedBackScreen : AppCompatActivity() {
 
         finish()
 
+    }
+
+    private fun showAverageRating() {
+        val averageRating: TextView = findViewById(R.id.tv_ratingAverage)
+        val amountRating: TextView = findViewById(R.id.tv_amountOfRatings)
+
+        // muuttaa arvostelujen keskiarvon yhden desimaalin tarkkuuteen
+        val decimal = BigDecimal(overAllRating.toDouble()).setScale(1, RoundingMode.HALF_EVEN)
+
+        averageRating.text = (decimal.toString() + "/5")
+        amountRating.text = (timesRated.toString() + " Arvostelua")
     }
 
     override fun onSupportNavigateUp(): Boolean {

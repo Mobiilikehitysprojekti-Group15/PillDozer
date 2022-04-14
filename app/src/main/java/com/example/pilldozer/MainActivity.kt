@@ -30,6 +30,11 @@ class MainActivity : AppCompatActivity() {
 
         var loginCheck: Boolean? = false
 
+        var overAllRating = 0F
+        var newRating = 0F
+        var timesRated = 0
+        var mathVar = 0F
+
 
     }
 
@@ -149,6 +154,40 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    fun showThanksMessage() {
+        thankYouTextView = findViewById(R.id.tv_thank_feedback)
+        thankYouTextView.text = "Kiitos Palautteesta!"
+
+        thumbUpImage = findViewById(R.id.thumb_Image)
+        thumbUpImage.setImageResource(R.drawable.ic_baseline_thumb_up_24)
+
+        object : CountDownTimer(5000, 1000) {
+
+            override fun onTick(millisUntilFinished: Long) {
+
+            }
+
+            override fun onFinish() {
+                thankYouTextView.text = ""
+                thumbUpImage.setImageResource(android.R.color.transparent)
+            }
+        }.start()
+    }
+
+    fun countOverAllRating() { // Laskee annettujen arvioiden keskiarvon
+        timesRated++
+        println("mathvar ennen" + mathVar)
+        mathVar = mathVar + newRating
+
+        overAllRating = mathVar / timesRated
+
+        println("newRating: " + newRating)
+        println("mathvar jälkeen: " + mathVar)
+        println("timesRated: " + timesRated)
+
+        println("Arvostelujen keskiarvo: " + overAllRating)
+    }
+
     override fun onActivityResult(requestCode: Int, resultCode: Int, intentData: Intent?) {
         super.onActivityResult(requestCode, resultCode, intentData)
 
@@ -158,16 +197,16 @@ class MainActivity : AppCompatActivity() {
                 val feedBackComment = data.getStringExtra(FEEDBACK_COMMENT)
                 val feedBackStars = data.getFloatExtra(FEEDBACK_STARS, 0F)
 
-                thankYouTextView = findViewById(R.id.tv_thank_feedback)
-                thankYouTextView.text = "Kiitos Palautteesta!"
+                newRating = 0F
+                newRating = feedBackStars
 
-                thumbUpImage = findViewById(R.id.thumb_Image)
+                countOverAllRating()
 
-                thumbUpImage.setImageResource(R.drawable.ic_baseline_thumb_up_24)
+                showThanksMessage()
 
-                println("mainissa")
-                println(feedBackComment)
-                println(feedBackStars)
+
+                //println(feedBackComment)
+                //println(feedBackStars)
 
             }
         }
