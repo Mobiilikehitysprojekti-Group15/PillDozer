@@ -17,13 +17,16 @@ import com.example.pilldozer.databinding.ActivityMainBinding
 import java.time.LocalDate
 import java.time.LocalTime
 import java.time.format.DateTimeFormatter
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
     private val newFeedBackActivityRequestCode = 1
+    private val newLoginScreenActivityRequestCode = 2
 
     lateinit var thankYouTextView: TextView
     lateinit var thumbUpImage: ImageView
+    lateinit var greetingTextView: TextView
 
     companion object {
         var loginId: Int? = 0 // Käyttäjän id
@@ -34,6 +37,8 @@ class MainActivity : AppCompatActivity() {
         var newRating = 0F
         var timesRated = 0
         var mathVar = 0F
+
+        var userName = ""
 
 
     }
@@ -144,7 +149,7 @@ class MainActivity : AppCompatActivity() {
 
     fun startLogin() {
         val intent = Intent(this, LoginScreen::class.java)
-        startActivity(intent)
+        startActivityForResult(intent, newLoginScreenActivityRequestCode)
 
     }
 
@@ -176,16 +181,30 @@ class MainActivity : AppCompatActivity() {
 
     fun countOverAllRating() { // Laskee annettujen arvioiden keskiarvon
         timesRated++
-        println("mathvar ennen" + mathVar)
         mathVar = mathVar + newRating
-
         overAllRating = mathVar / timesRated
 
-        println("newRating: " + newRating)
-        println("mathvar jälkeen: " + mathVar)
-        println("timesRated: " + timesRated)
+    }
 
-        println("Arvostelujen keskiarvo: " + overAllRating)
+    fun greeting() {
+        val rightNow = Calendar.getInstance()
+        val currentHourIn24Format: Int =rightNow.get(Calendar.HOUR_OF_DAY)
+
+        greetingTextView = findViewById(R.id.tv_userGreeting)
+
+
+        if (currentHourIn24Format in 0..5) {
+            greetingTextView.text = ("Hyvää Yötä " + userName)
+        }
+        else if (currentHourIn24Format in 6..11) {
+            greetingTextView.text = ("Hyvää Huomenta " + userName)
+        }
+        else if (currentHourIn24Format in 12..18) {
+            greetingTextView.text = ("Hyvää Päivää " + userName)
+        }
+        else if (currentHourIn24Format in 19..23) {
+            greetingTextView.text = ("Hyvää Iltaa " + userName)
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, intentData: Intent?) {
@@ -207,6 +226,16 @@ class MainActivity : AppCompatActivity() {
 
                 //println(feedBackComment)
                 //println(feedBackStars)
+
+            }
+        }
+
+        if(requestCode == newLoginScreenActivityRequestCode && resultCode == Activity.RESULT_OK) {
+            intentData?.let { data ->
+
+                userName = data.getStringExtra(LOGIN_NAME).toString()
+
+                greeting()
 
             }
         }

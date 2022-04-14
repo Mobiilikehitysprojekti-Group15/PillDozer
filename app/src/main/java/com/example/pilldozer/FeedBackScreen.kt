@@ -71,8 +71,8 @@ class FeedBackScreen : AppCompatActivity() {
         // muuttaa arvostelujen keskiarvon yhden desimaalin tarkkuuteen
         val decimal = BigDecimal(overAllRating.toDouble()).setScale(1, RoundingMode.HALF_EVEN)
 
-        averageRating.text = (decimal.toString() + "/5")
-        amountRating.text = (timesRated.toString() + " Arvostelua")
+        averageRating.text = (decimal.toString() + "/5 ")
+        amountRating.text = (timesRated.toString() + " Arvostelua ")
     }
 
     override fun onSupportNavigateUp(): Boolean {
