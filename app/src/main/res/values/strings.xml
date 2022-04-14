@@ -53,6 +53,9 @@
     <string name="person3_personDescription">Elävä Legenda</string>
     <string name="person4_personName">Jaakko</string>
     <string name="person4_personDescription">Viinankeittäjä</string>
+    <string name="feed_back_text">Anna Sovellukselle Palautetta</string>
+    <string name="send_feedback_button">Lähetä!</string>
+    <string name="thank_feedback">Kiitos Palautteesta!</string>
 
 
 </resources>

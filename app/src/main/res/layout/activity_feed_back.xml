@@ -6,4 +6,53 @@
     android:layout_height="match_parent"
     tools:context=".FeedBackScreen">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:text="@string/feed_back_text"
+        android:textAlignment="center"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RatingBar
+        android:id="@+id/feedback_stars"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:contentDescription="star_rating"
+        android:theme="@style/RatingBar"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/feedback_stars"
+        app:layout_constraintStart_toStartOf="@+id/feedback_stars"
+        app:layout_constraintTop_toBottomOf="@+id/feedback_stars">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_feedback_comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="kommentti" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/buSendFeedback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/send_feedback_button"
+        app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,6 @@
 package com.example.pilldozer
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -8,6 +9,7 @@ import android.os.CountDownTimer
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
@@ -18,12 +20,17 @@ import java.time.format.DateTimeFormatter
 
 class MainActivity : AppCompatActivity() {
 
+    private val newFeedBackActivityRequestCode = 1
 
+    lateinit var thankYouTextView: TextView
+    lateinit var thumbUpImage: ImageView
 
     companion object {
         var loginId: Int? = 0 // Käyttäjän id
 
         var loginCheck: Boolean? = false
+
+
     }
 
 
@@ -49,6 +56,7 @@ class MainActivity : AppCompatActivity() {
         else {
             setContentView(binding.root)
         }
+
 
 
         /*
@@ -125,7 +133,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun startFeedback() {
         val intent = Intent(this, FeedBackScreen::class.java)
-        startActivity(intent)
+        startActivityForResult(intent, newFeedBackActivityRequestCode)
+
     }
 
     fun startLogin() {
@@ -138,6 +147,30 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, MedicineScreen::class.java)
         startActivity(intent)
 
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, intentData: Intent?) {
+        super.onActivityResult(requestCode, resultCode, intentData)
+
+        if(requestCode == newFeedBackActivityRequestCode && resultCode == Activity.RESULT_OK) {
+            intentData?.let { data ->
+
+                val feedBackComment = data.getStringExtra(FEEDBACK_COMMENT)
+                val feedBackStars = data.getFloatExtra(FEEDBACK_STARS, 0F)
+
+                thankYouTextView = findViewById(R.id.tv_thank_feedback)
+                thankYouTextView.text = "Kiitos Palautteesta!"
+
+                thumbUpImage = findViewById(R.id.thumb_Image)
+
+                thumbUpImage.setImageResource(R.drawable.ic_baseline_thumb_up_24)
+
+                println("mainissa")
+                println(feedBackComment)
+                println(feedBackStars)
+
+            }
+        }
     }
 }
 
