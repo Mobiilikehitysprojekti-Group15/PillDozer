@@ -45,4 +45,17 @@
     <string name="login_button_text">kirjaudu sisään</string>
 
 
+    <string name="person1_personName">Johannes</string>
+    <string name="person1_personDescription">Mestari</string>
+    <string name="person2_personName">Johanna</string>
+    <string name="person2_personDescription">Yritys Jumalatar</string>
+    <string name="person3_personName">Joosep</string>
+    <string name="person3_personDescription">Elävä Legenda</string>
+    <string name="person4_personName">Jaakko</string>
+    <string name="person4_personDescription">Viinankeittäjä</string>
+    <string name="feed_back_text">Anna Sovellukselle Palautetta</string>
+    <string name="send_feedback_button">Lähetä!</string>
+    <string name="thank_feedback">Kiitos Palautteesta!</string>
+
+
 </resources>

@@ -23,7 +23,7 @@ class MedicineListViewModel(val dataSource: DataSource) : ViewModel() {
             return
         }
 
-        println("inser medicineen paasty")
+
         val image = dataSource.getMedicineImageAsset()
         val newMedicine = Medicine(
             Random.nextLong(),
