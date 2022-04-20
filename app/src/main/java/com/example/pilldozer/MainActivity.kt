@@ -8,11 +8,13 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import com.example.pilldozer.database.DBHandler
 import com.example.pilldozer.databinding.ActivityMainBinding
 import java.time.LocalDate
 import java.time.LocalTime
@@ -20,6 +22,7 @@ import java.time.format.DateTimeFormatter
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
+    var dbHandler: DBHandler? = null
 
     private val newFeedBackActivityRequestCode = 1
     private val newLoginScreenActivityRequestCode = 2
@@ -49,6 +52,7 @@ class MainActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
 
@@ -92,6 +96,8 @@ class MainActivity : AppCompatActivity() {
         medicineListButton.setOnClickListener {
             startMedicine()
         }
+
+        dbHandler = DBHandler(this)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

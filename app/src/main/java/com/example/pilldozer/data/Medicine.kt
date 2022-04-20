@@ -10,3 +10,4 @@ data class Medicine(
     val image: Int?,
     val description: String
 )
+
