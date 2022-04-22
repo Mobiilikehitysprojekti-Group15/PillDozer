@@ -22,7 +22,7 @@
         android:layout_margin="16dp"
         android:contentDescription="newMedicineButton"
         android:src="@drawable/ic_plus"
-        android:backgroundTint="#26D100"
+        android:backgroundTint="@color/custom_button_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

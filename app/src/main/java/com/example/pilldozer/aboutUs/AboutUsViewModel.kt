@@ -13,7 +13,7 @@ class AboutUsViewModel(val aboutUsSource: AboutUsSource) : ViewModel() {
 
     val personLiveData = aboutUsSource.getPersonList()
 
-    // If name, quantity and description are given, create new Medicine
+
     fun insertPerson(
         personName: String?,
         personDescription: String?

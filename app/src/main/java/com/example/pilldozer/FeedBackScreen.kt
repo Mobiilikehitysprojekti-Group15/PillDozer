@@ -46,6 +46,7 @@ class FeedBackScreen : AppCompatActivity() {
         ratingStars = findViewById(R.id.feedback_stars)
     }
 
+    //palauttaa annetun arvostelun
     private fun sendFeedback() {
         val resultIntent = Intent()
 
@@ -61,9 +62,9 @@ class FeedBackScreen : AppCompatActivity() {
         setResult(Activity.RESULT_OK, resultIntent)
 
         finish()
-
     }
 
+    //Näyttää annettujen arvostelujen keskiarvon
     private fun showAverageRating() {
         val averageRating: TextView = findViewById(R.id.tv_ratingAverage)
         val amountRating: TextView = findViewById(R.id.tv_amountOfRatings)

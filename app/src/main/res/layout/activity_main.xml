@@ -12,8 +12,10 @@
         android:layout_height="wrap_content"
 
 
+        android:fontFamily="@font/chango"
         android:text="PillDozer"
-        android:textColor="#FF0000"
+        android:textAlignment="center"
+        android:textColor="#64549F"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="@+id/imageView2"
         app:layout_constraintStart_toStartOf="@+id/imageView2"

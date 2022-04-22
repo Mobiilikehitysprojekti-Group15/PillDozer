@@ -13,8 +13,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.pilldozer.data.Medicine
 import com.example.pilldozer.medicineDetail.MedicineDetailActivity
 
-
-
 const val MEDICINE_ID = "medicine id"
 
 class MedicineScreen : AppCompatActivity() {
@@ -23,13 +21,9 @@ class MedicineScreen : AppCompatActivity() {
         MedicineListViewModelFactory(this)
     }
 
-
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_medicine)
-
 
         val headerAdapter = HeaderAdapter()
         val medicineAdapter = CustomAdapter { medicine -> adapterOnClick(medicine) }
@@ -38,8 +32,6 @@ class MedicineScreen : AppCompatActivity() {
         val recyclerView: RecyclerView = findViewById(R.id.medList)
         recyclerView.adapter = concatAdapter
 
-
-        // this creates a vertical layout Manager
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         medicineListViewModel.medicineLiveData.observe(this, {
@@ -59,6 +51,7 @@ class MedicineScreen : AppCompatActivity() {
         actionbar.setDisplayHomeAsUpEnabled(true)
     }
 
+    // Lääkettä painaessa aukaistaan kyseisen lääkkeen oma sivu
     private fun adapterOnClick(medicine: Medicine) {
         val intent = Intent(this, MedicineDetailActivity()::class.java)
         intent.putExtra(MEDICINE_ID, medicine.id)
@@ -70,6 +63,7 @@ class MedicineScreen : AppCompatActivity() {
         startActivityForResult(intent, newMedicineActivityRequestCode)
     }
 
+    // Saadaan lääkkeen tiedot ja lisätään lääke listaan
     override fun onActivityResult(requestCode: Int, resultCode: Int, intentData: Intent?) {
         super.onActivityResult(requestCode, resultCode, intentData)
 
@@ -78,9 +72,6 @@ class MedicineScreen : AppCompatActivity() {
                 val medicineName = data.getStringExtra(MEDICINE_NAME)
                 val medicineQuantity = data.getStringExtra(MEDICINE_QUANTITY)
                 val medicineDescription = data.getStringExtra(MEDICINE_DESCRIPTION)
-                //val medicineHour = data.getIntExtra(MEDICINE_HOUR)
-                //val medicineMinute = data.getIntExtra(MEDICINE_MINUTE)
-
 
                 medicineListViewModel.insertMedicine(medicineName, medicineQuantity, medicineDescription)
 
@@ -88,41 +79,6 @@ class MedicineScreen : AppCompatActivity() {
         }
     }
 
-    /*
-        // ArrayList of class ItemsViewModel
-        val data = ArrayList<ItemsViewModel>()
-
-        // This loop will create 20 Views containing
-        // the image with the count of view
-        //for (i in 1..20) {
-          //  data.add(ItemsViewModel(R.drawable.ic_healing, "Item " + i, "1000mg"))
-        //}
-
-        // This will pass the ArrayList to our Adapter
-        val adapter = CustomAdapter(data)
-
-        // Setting the Adapter with the recyclerview
-        recyclerview.adapter = adapter
-
-        val givenMedName = intent.getStringExtra("medicineName")
-        val givenMedQuantity = intent.getStringExtra("medicineQuantity")
-
-        if (givenMedName != "" && givenMedQuantity != "") {
-            data.add(ItemsViewModel(R.drawable.ic_healing, AlertScreen.MedDataObject.medicineName, AlertScreen.MedDataObject.medicineQuantity))
-        }
-
-
-        fun newItemViewModel() {
-            data.add(ItemsViewModel(R.drawable.ic_healing, AlertScreen.MedDataObject.medicineName, AlertScreen.MedDataObject.medicineQuantity))
-        }
-
-        fun startAlertScreen() {
-        val intent = Intent(this, AlertScreen::class.java)
-        startActivity(intent)
-
-    }
-
-        */
 
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()

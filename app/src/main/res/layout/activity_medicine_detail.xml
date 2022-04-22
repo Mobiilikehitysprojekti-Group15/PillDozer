@@ -6,39 +6,53 @@
     android:layout_height="match_parent"
     tools:context=".medicineDetail.MedicineDetailActivity">
 
-    <TextView
-        android:id="@+id/tvMedicineName"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:text="MedicineName"
-        android:textSize="34sp"
+        android:layout_marginTop="70dp"
+        android:gravity="center|left"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="65dp"
+            android:layout_height="77dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="15dp"
+            app:srcCompat="@drawable/pill_icon" />
+
+        <TextView
+            android:id="@+id/tvMedicineName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MedicineName"
+            android:textSize="34sp" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/tvMedicineQuantity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:text="Quantity"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="@+id/tvMedicineName"
-        app:layout_constraintStart_toStartOf="@+id/tvMedicineName"
-        app:layout_constraintTop_toBottomOf="@+id/tvMedicineName" />
+        android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <TextView
         android:id="@+id/tvMedicineDescription"
-        android:layout_width="0dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="30dp"
+        android:layout_marginTop="20dp"
         android:text="Description"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tvMedicineQuantity"
+        app:layout_constraintStart_toStartOf="@+id/tvMedicineQuantity"
         app:layout_constraintTop_toBottomOf="@+id/tvMedicineQuantity" />
 
     <Button
@@ -46,9 +60,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="100dp"
+        android:backgroundTint="@android:color/holo_red_light"
         android:text="Poista Lääke"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:backgroundTint="@android:color/holo_red_light"/>
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

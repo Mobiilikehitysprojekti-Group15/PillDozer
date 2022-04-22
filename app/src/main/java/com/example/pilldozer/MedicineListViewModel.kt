@@ -12,7 +12,7 @@ class MedicineListViewModel(val dataSource: DataSource) : ViewModel() {
 
     val medicineLiveData = dataSource.getMedicineList()
 
-    // If name, quantity and description are given, create new Medicine
+    //Jos lääkkeen nimi, määrä ja kuvaus on annettu, luodaan uusi lääke
     fun insertMedicine(
         medicineName: String?,
         medicineQuantity: String?,
@@ -22,8 +22,6 @@ class MedicineListViewModel(val dataSource: DataSource) : ViewModel() {
         if (medicineName == null || medicineQuantity == null || medicineDescription == null) {
             return
         }
-
-
         val image = dataSource.getMedicineImageAsset()
         val newMedicine = Medicine(
             Random.nextLong(),

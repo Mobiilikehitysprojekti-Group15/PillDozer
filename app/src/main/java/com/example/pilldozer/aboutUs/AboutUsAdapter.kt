@@ -42,7 +42,6 @@ class AboutUsAdapter(private val onClick: (Person) -> Unit) :
     }
 
 
-    // create new views
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PersonViewHolder {
 
         val view = LayoutInflater.from(parent.context)

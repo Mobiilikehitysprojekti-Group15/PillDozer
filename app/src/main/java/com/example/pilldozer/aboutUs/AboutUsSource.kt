@@ -29,7 +29,6 @@ class AboutUsSource(resources: Resources) {
     }
 
     fun getPersonImageAsset(): Int {
-
         return R.drawable.pill_icon
     }
 

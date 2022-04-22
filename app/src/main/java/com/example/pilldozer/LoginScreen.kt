@@ -24,21 +24,18 @@ class LoginScreen : AppCompatActivity() {
 
             loginCheck = true
             sendUserName()
-            //onBackPressed()
 
         }
     }
 
+    //palauttaa annetun käyttäjänimen
     private fun sendUserName() {
         val resultIntent = Intent()
-
         val givenName = giveName.text.toString()
 
         resultIntent.putExtra(LOGIN_NAME, givenName)
-
         setResult(Activity.RESULT_OK, resultIntent)
 
         finish()
-
     }
 }

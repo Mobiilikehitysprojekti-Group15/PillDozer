@@ -9,7 +9,7 @@ class DataSource(resources: Resources) {
     private val initialMedicineList = medicineList(resources)
     private val medicineLiveData = MutableLiveData(initialMedicineList)
 
-    //Adding medicine
+    //Luodaan uusi lääke
     fun addMedicine(medicine: Medicine) {
         val currentList = medicineLiveData.value
         if (currentList == null) {
@@ -21,7 +21,7 @@ class DataSource(resources: Resources) {
         }
     }
 
-    //Removing medicine
+    //Poistetaan lääke
     fun removeMedicine(medicine: Medicine) {
         val currentList = medicineLiveData.value
         if (currentList != null) {
@@ -31,7 +31,7 @@ class DataSource(resources: Resources) {
         }
     }
 
-    //Return medicine given an ID
+    //Palauttaan lääkkeen annetulla ID:llä
     fun getMedicineForId(id: Long): Medicine? {
         medicineLiveData.value?.let { medicines ->
             return medicines.firstOrNull(){ it.id == id}
