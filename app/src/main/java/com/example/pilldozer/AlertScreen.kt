@@ -33,7 +33,6 @@ class AlertScreen : AppCompatActivity() {
         setContentView(R.layout.activity_alert_screen)
         onClickTime()
 
-        //actionbar
         val actionbar = supportActionBar
         actionbar!!.title = "Lääke muistutuksen lisäys"
         actionbar.setDisplayHomeAsUpEnabled(true)
@@ -62,13 +61,12 @@ class AlertScreen : AppCompatActivity() {
 
             if (textView != null) {
 
-
-                // this makes the time format like 00:00 if the time is smaller than 10 rather than 0:0
+                // näyttää ajan muodossa 00:00 jos kennonaika on pienempi kuin 10, eikä muodossa 0:0
                 val hourStr = if (hour < 10) "0" + hour else hour
                 val min = if (minute < 10) "0" + minute else minute
 
-                // display format of time
-                val msg = "Time is: $hourStr : $min "
+                // näyttää kellossa olevan ajan
+                val msg = "Aika: $hourStr : $min "
                 textView.text = msg
                 textView.visibility = ViewGroup.VISIBLE
 
@@ -96,13 +94,11 @@ class AlertScreen : AppCompatActivity() {
             val hour = hourTemp
             val minute = minuteTemp
 
-            println(name)
-            println(quantity)
-            println(description)
-            println(hourTemp)
-            println(minuteTemp)
 
             createAlarm()
+
+            notificationMedName = name
+            notificationMedQuantity = quantity
 
             resultIntent.putExtra(MEDICINE_NAME, name)
             resultIntent.putExtra(MEDICINE_QUANTITY, quantity)
@@ -116,6 +112,7 @@ class AlertScreen : AppCompatActivity() {
         }
     }
 
+    //Luodaan ajastettu hälytys
     private fun createAlarm() {
 
         val calendar: Calendar = Calendar.getInstance()
@@ -153,6 +150,8 @@ class AlertScreen : AppCompatActivity() {
 
 
     companion object {
+        var notificationMedName = ""
+        var notificationMedQuantity = ""
         var hourTemp = 0
         var minuteTemp = 0
     }

@@ -29,8 +29,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var greetingTextView: TextView
 
     companion object {
-        var loginId: Int? = 0 // Käyttäjän id
-
+        //var loginId: Int? = 0 // Käyttäjän id
         var loginCheck: Boolean? = false
 
         var overAllRating = 0F
@@ -39,19 +38,15 @@ class MainActivity : AppCompatActivity() {
         var mathVar = 0F
 
         var userName = ""
-
-
     }
 
-
-
     lateinit var binding: ActivityMainBinding
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
 
+        /*
         if (loginId == 0) { //jos käyttäjällä ei ole id:tä login ruutu käynnistyy
             loginCheck = false
         }
@@ -59,34 +54,18 @@ class MainActivity : AppCompatActivity() {
             loginCheck = true
         }
 
+         */
+
+        //tarkistaa onko käyttäjä kirjautunut jo
         if (loginCheck == false) {
             setContentView(binding.root)
             startLogin()
         }
         else {
             setContentView(binding.root)
+            greeting()
         }
 
-
-
-        /*
-        val timeTextView: TextView = findViewById(R.id.countTime)
-
-        val startCountButton: Button = findViewById(R.id.BuStartCount)
-        startCountButton.setOnClickListener {
-            object : CountDownTimer(30000, 1000) {
-
-                override fun onTick(millisUntilFinished: Long) {
-                    timeTextView.setText("seconds remaining: " + millisUntilFinished / 1000)
-                }
-
-                override fun onFinish() {
-                    timeTextView.setText("ota lääkkeet!")
-                }
-            }.start()
-
-        }
-        */
 
         val medicineListButton: Button = findViewById(R.id.buMedicine)
         medicineListButton.setOnClickListener {
@@ -94,6 +73,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    //luo yläpalkkiin drop-down valikon
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.mainmenu, menu)
         return true
@@ -159,6 +139,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    //Kiittää käyttäjää tämän annettua palautetta
     fun showThanksMessage() {
         thankYouTextView = findViewById(R.id.tv_thank_feedback)
         thankYouTextView.text = "Kiitos Palautteesta!"
@@ -166,10 +147,9 @@ class MainActivity : AppCompatActivity() {
         thumbUpImage = findViewById(R.id.thumb_Image)
         thumbUpImage.setImageResource(R.drawable.ic_baseline_thumb_up_24)
 
+        //Viesti näkyy vain määritetyn ajan verran
         object : CountDownTimer(5000, 1000) {
-
             override fun onTick(millisUntilFinished: Long) {
-
             }
 
             override fun onFinish() {
@@ -179,19 +159,20 @@ class MainActivity : AppCompatActivity() {
         }.start()
     }
 
-    fun countOverAllRating() { // Laskee annettujen arvioiden keskiarvon
+    // Laskee annettujen arvioiden keskiarvon
+    fun countOverAllRating() {
         timesRated++
         mathVar = mathVar + newRating
         overAllRating = mathVar / timesRated
 
     }
 
+    //Tervehtii käyttäjää, tervehdyksen sisältö riippuu kellonajasta
     fun greeting() {
         val rightNow = Calendar.getInstance()
         val currentHourIn24Format: Int =rightNow.get(Calendar.HOUR_OF_DAY)
 
         greetingTextView = findViewById(R.id.tv_userGreeting)
-
 
         if (currentHourIn24Format in 0..5) {
             greetingTextView.text = ("Hyvää Yötä " + userName)
@@ -207,6 +188,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    //Vastaanottaa annetun arvostelun
     override fun onActivityResult(requestCode: Int, resultCode: Int, intentData: Intent?) {
         super.onActivityResult(requestCode, resultCode, intentData)
 
@@ -220,22 +202,19 @@ class MainActivity : AppCompatActivity() {
                 newRating = feedBackStars
 
                 countOverAllRating()
-
                 showThanksMessage()
-
-
-                //println(feedBackComment)
-                //println(feedBackStars)
 
             }
         }
 
+        //vastaanottaa annetun käyttäjänimen
         if(requestCode == newLoginScreenActivityRequestCode && resultCode == Activity.RESULT_OK) {
             intentData?.let { data ->
 
                 userName = data.getStringExtra(LOGIN_NAME).toString()
 
                 greeting()
+                loginCheck = true
 
             }
         }

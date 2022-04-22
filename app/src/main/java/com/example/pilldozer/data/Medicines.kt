@@ -3,8 +3,8 @@ package com.example.pilldozer.data
 import android.content.res.Resources
 import com.example.pilldozer.R
 
-
-
+//Lista lääkkeistä jotka luodaan valmiiksi sovelluksen käynnistyessä
+//Tämä on siis vain demoa varten, lopullisessa tuotteessa tiedot tulisivat databasesta
 fun medicineList(resources: Resources): List<Medicine> {
     return listOf(
         Medicine(

@@ -12,6 +12,10 @@ import android.graphics.Color
 import android.media.RingtoneManager
 import android.os.Build
 import androidx.core.app.NotificationCompat
+import com.example.pilldozer.AlertScreen.Companion.notificationMedName
+import com.example.pilldozer.AlertScreen.Companion.notificationMedQuantity
+import com.example.pilldozer.MainActivity
+import com.example.pilldozer.MedicineScreen
 import com.example.pilldozer.R
 
 class  NotificationUtils(base: Context) : ContextWrapper(base) {
@@ -21,13 +25,13 @@ class  NotificationUtils(base: Context) : ContextWrapper(base) {
 
     private var manager: NotificationManager? = null
 
+
     init {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             createChannels()
         }
     }
 
-    // Create channel for Android version 26+
     @TargetApi(Build.VERSION_CODES.O)
     private fun createChannels() {
         val channel = NotificationChannel(MYCHANNEL_ID, MYCHANNEL_NAME, NotificationManager.IMPORTANCE_HIGH)
@@ -36,14 +40,14 @@ class  NotificationUtils(base: Context) : ContextWrapper(base) {
         getManager().createNotificationChannel(channel)
     }
 
-    // Get Manager
     fun getManager() : NotificationManager {
         if (manager == null) manager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         return manager as NotificationManager
     }
 
+    //Luodaan ilmoitus joka tulee näkyviin kun alarm aktivoituu
     fun getNotificationBuilder(): NotificationCompat.Builder {
-        val intent = Intent(this, NotificationUtils::class.java).apply {
+        val intent = Intent(this, MainActivity::class.java).apply {
             flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         }
         val pendingIntent = PendingIntent.getActivity(this, 0, intent, 0)
@@ -53,7 +57,7 @@ class  NotificationUtils(base: Context) : ContextWrapper(base) {
             .setSmallIcon(R.drawable.ic_launcher_foreground)
             .setContentTitle("Lääke")
             .setLargeIcon(bitmap)
-            .setContentText("Ota ne lääkkeet")
+            .setContentText("Aika ottaa " + notificationMedName + ", otettava määrä " + notificationMedQuantity)
             .setContentIntent(pendingIntent)
             .setPriority(NotificationCompat.PRIORITY_HIGH)
             .setAutoCancel(true)

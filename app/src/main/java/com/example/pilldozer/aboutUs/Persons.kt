@@ -4,6 +4,7 @@ import android.content.res.Resources
 import com.example.pilldozer.R
 import com.example.pilldozer.aboutUs.Person
 
+//Lista sovelluksen tekijöistä
 fun personList(resources: Resources): List<Person> {
     return listOf(
         Person(

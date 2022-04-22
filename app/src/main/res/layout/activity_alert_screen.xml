@@ -143,7 +143,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="Lisää lääke"
-            android:backgroundTint="#188100"
+            android:backgroundTint="@color/custom_button_color"
             app:layout_constraintBottom_toBottomOf="parent"
             tools:layout_editor_absoluteX="133dp" />
 

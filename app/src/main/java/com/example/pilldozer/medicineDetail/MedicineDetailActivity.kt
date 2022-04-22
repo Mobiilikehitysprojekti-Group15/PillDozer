@@ -8,6 +8,7 @@ import com.example.pilldozer.MEDICINE_ID
 import com.example.pilldozer.R
 import androidx.activity.viewModels
 
+//Yksittäisen lääkkeen oma sivu
 class MedicineDetailActivity : AppCompatActivity() {
 
     private val medicineDetailViewModel by viewModels<MedicineDetailViewModel> {
@@ -17,8 +18,6 @@ class MedicineDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_medicine_detail)
-
-
 
         var currentMedicineId: Long? = null
 

@@ -14,7 +14,6 @@ import com.example.pilldozer.data.Medicine
 class CustomAdapter(private val onClick: (Medicine) -> Unit) :
     ListAdapter<Medicine, CustomAdapter.MedicineViewHolder>(MedicineDiffCallback) {
 
-    // Holds the views for adding it to image and text
     class MedicineViewHolder(ItemView: View, val onClick: (Medicine) -> Unit) :
         RecyclerView.ViewHolder(ItemView) {
 
@@ -43,7 +42,7 @@ class CustomAdapter(private val onClick: (Medicine) -> Unit) :
     }
 
 
-    // create new views
+    // Luo uusia views:sejä
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MedicineViewHolder {
 
         val view = LayoutInflater.from(parent.context)
@@ -52,7 +51,7 @@ class CustomAdapter(private val onClick: (Medicine) -> Unit) :
         return MedicineViewHolder(view, onClick)
     }
 
-    // binds the list items to a view
+    // bindaa listan esineen viewiin
     override fun onBindViewHolder(holder: MedicineViewHolder, position: Int) {
 
         val medicine = getItem(position)
@@ -60,7 +59,7 @@ class CustomAdapter(private val onClick: (Medicine) -> Unit) :
 
     }
 
-    // return the number of the items in the list
+    // Palauttaa listalla olevien esineiden määrän
     /*
     override fun getItemCount(): Int {
         return mList.size
